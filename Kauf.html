@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="./css.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!-- Das ist die CSS für Bootstrap. Bootstrap macht einfach alles schöner, zum Beispiel die Buttons, die ich mit der class ein Design zuweisen kann class="col-4 btn btn-dark" für schwarzen col-4 Button-->
+  </head>
+  <body>
+    <button type="button" class="btn btn-info" disabled><h1>Taschenrechner Kaufmännisch</h1></button> <br>
+    <button type="button" class="btn btn-success" disabled><h3>Ven</h3></button>
+    <script type="text/javascript">
+      let x=1 //Variablen hinzufügen, die zum Belegen der Eingabe wichtig sind und die Zahlen berechnen
+      let y=0
+      let z=0
+    </script>
+    <div class="container">
+      <div class="row">
+        <input id="string" class="col-12" type="string" name="eingabe" min="-9999999999999" max="9999999999999999999" placeholder="Geben Sie hier Ihre Rechnung mithilfe der Tastatur oder den Buttons ein"> <!-- Eingabe, die von -9999999999 bis 999999999999999 geht. Der ID "String" ist für die Adressierung wichtig! -->
+        <p id="Hallo"></p> <!-- Unwichtig -->
+      </div>
+      <div class="row">
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne1()">1</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne2()">2</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne3()">3</button>
+      </div>
+      <div class="row">
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne4()">4</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne5()">5</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne6()">6</button>
+      </div>
+      <div class="row">
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne7()">7</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne8()">8</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="Berechne9()">9</button>
+      </div>
+      <div class="row">
+        <button type="button" class="col-4 btn btn-dark" onclick="doubleclick(this, function(){BerechnePlus()}, function(){BerechneMal()})" ondblclick="">+/*</button> <!-- führt die Funktion doubleclick aus, welche ich in doubleclick.js definiert habe-->
+        <button type="button" class="col-4 btn btn-dark" onclick="doubleclick(this, function(){Berechne0()}, function(){BerechneQuadrat()})">0/x²</button>
+        <button type="button" class="col-4 btn btn-dark" onclick="doubleclick(this, function(){BerechneMinus()}, function(){BerechneGeteilt()})">-/÷</button>
+      </div>
+      <div class="row">
+        <button type="button" class="col-12 btn btn-success btn-lg" onclick="getElementById('result').value = calculate(getElementById('string').value)">Berechnen</button>
+      </div>
+      <div class="row">
+        <input type="reset" id="reset" class="col-12 btn btn-danger btn-lg" onclick="removefromstring(), console.log('RESET')"></input>
+        <input type="text" class="col-12" id="result" placeholder="Ergebnis"></input <!-- Ausgabe -->
+        <br><br><br><br>
+      </div>
+    </div>
+    <script src="./js/abfrage.js"></script> <!-- Meine Skripte binde ich extern ein, um meine HTML schön und sauber zu halten!-->
+    <script src="./js/addtostring.js"></script>
+    <script src="./js/Berechnen.js"></script>
+    <script src="./js/Berechnung.js"></script>
+    <script src="./js/calculate.js"></script>
+    <script src="./js/function_eingabe.js"></script>
+    <script src="./js/Doubleclick.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="./js/doubleclick.js"></script>
+  <button type="button" id="Zurück" class="btn btn-outline-danger" onclick="javascript:location.href='./index.html'">< Zurück </button><br>
+  </body>
+</html>
